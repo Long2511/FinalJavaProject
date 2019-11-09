@@ -1,13 +1,15 @@
+package java;
+
 import java.awt.EventQueue;
-import java.GenerateQuestion;
+import java.GenerateNumber;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 
 public class Frontend {
-	//static GenerateQuestion  displayQuestion = new GenerateQuestion(); 
-	//private static final GenerateQuestion DisplayQuestion = displayQuestion;
+	static GenerateNumber  GenerateNumber = new GenerateNumber();
+	private static final GenerateNumber DisplayQuestion = GenerateNumber;
 	String displayQuestion = "Test String";
 	private JFrame frame;
 	private JTextField textField;

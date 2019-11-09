@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e1e844e-6263-4081-9e3f-6493a61b13b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FinalJavaProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/GenerateNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frontend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frontend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/GenerateQuestion.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frontend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Frontend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/main.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +46,26 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Frontend" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="java.Frontend" />
+      <module name="FinalJavaProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Frontend" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -60,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573272181399</updated>
-      <workItem from="1573272183074" duration="1625000" />
+      <workItem from="1573272183074" duration="1866000" />
     </task>
     <servers />
   </component>
