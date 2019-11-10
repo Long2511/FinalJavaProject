@@ -1,19 +1,19 @@
 package java;
 
 import java.awt.EventQueue;
-import java.GenerateNumber;
+import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
-
 public class Frontend {
-	static GenerateNumber  GenerateNumber = new GenerateNumber();
-	private static final GenerateNumber DisplayQuestion = GenerateNumber;
-	String displayQuestion = "Test String";
+
+	String displayQuestion = "8 x 2";
 	private JFrame frame;
 	private JTextField textField;
 
+
+	}
 	/**
 	 * Launch the application.
 	 */
@@ -42,17 +42,18 @@ public class Frontend {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 666, 345);
+		frame.setBounds(100, 100, 533, 345);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
-		textField.setBounds(401, 86, 153, 35);
+		textField.setBounds(281, 86, 153, 35);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblQuestion = new JLabel(displayQuestion);
-		lblQuestion.setBounds(30, 86, 297, 35);
+		lblQuestion.setFont(new Font("Dialog", Font.PLAIN, 40));
+		lblQuestion.setBounds(116, 86, 153, 35);
 		frame.getContentPane().add(lblQuestion);
 	}
 }
