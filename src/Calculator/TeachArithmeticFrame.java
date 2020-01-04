@@ -1,16 +1,15 @@
 package Calculator;
 
-import java.awt.EventQueue;
+import java.awt.*;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.ScrollPane;
+import java.util.Vector;
 
 
 public class TeachArithmeticFrame {
@@ -25,6 +24,9 @@ public class TeachArithmeticFrame {
 	JButton resetInputButton;
 	JLabel equalLabel;
 	JLabel userCheckLabel;
+	JPanel userAnswerDisplay;
+	Vector answerHolder = new Vector();
+	int userTries;
 
 	/**
 	 * Launch the application.
@@ -74,6 +76,7 @@ public class TeachArithmeticFrame {
 					invalidValueLabel.setText("");
 			}
 		});
+
 		userAnswerField.setBounds(240, 58, 116, 22);
 		frame.getContentPane().add(userAnswerField);
 		userAnswerField.setColumns(10);
@@ -88,19 +91,26 @@ public class TeachArithmeticFrame {
 		checkUserInputBtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent arg0) {
-				try {
-					int i = Integer.parseInt(userAnswerField.getText());
-					invalidValueLabel.setText("");
-					boolean result = generator.VerifyTheResult(Integer.parseInt(userAnswerField.getText()));
-					if (result == true){
-						userCheckLabel.setText("Correct!");
+					try {
+						int i = Integer.parseInt(userAnswerField.getText());
+						invalidValueLabel.setText("");
+						boolean result = generator.VerifyTheResult(Integer.parseInt(userAnswerField.getText()));
+						if (result == true) {
+							userCheckLabel.setText("Correct!");
+							userTries = 0;
+							answerHolder.clear();
+						} else {
+							userCheckLabel.setText("Incorrect");
+							userTries++;
+							answerHolder.add(userTries + ":" + userAnswerField.getText());
+						}
+
+						System.out.println(answerHolder);
+
+					} catch (NumberFormatException e1) {
+						invalidValueLabel.setText("Invalid Number");
 					}
-					else {userCheckLabel.setText("Incorrect");}
-				}
-				catch (NumberFormatException e1)
-				{
-					invalidValueLabel.setText("Invalid Number");
-				};
+					;
 			}
 		});
 		checkUserInputBtn.setBounds(169, 190, 97, 25);
@@ -110,6 +120,8 @@ public class TeachArithmeticFrame {
 		nextQuestionBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GenerateCalculation();
+				userCheckLabel.setText("");
+				answerHolder.clear();
 			}
 		});
 		nextQuestionBtn.setBounds(278, 190, 97, 25);
@@ -123,15 +135,18 @@ public class TeachArithmeticFrame {
 		invalidValueLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		invalidValueLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		invalidValueLabel.setBounds(147, 90, 206, 16);
+		invalidValueLabel.setForeground(Color.RED);
 		frame.getContentPane().add(invalidValueLabel);
 		
 		equalLabel = new JLabel("=");
 		equalLabel.setBounds(205, 62, 23, 16);
 		frame.getContentPane().add(equalLabel);
-		
-		ScrollPane scrollPane = new ScrollPane();
-		scrollPane.setBounds(5, 9, 116, 175);
-		frame.getContentPane().add(scrollPane);
+
+		JScrollPane userAnswerPanel = new JScrollPane();
+		userAnswerPanel.setViewportBorder(null);
+		userAnswerPanel.setBounds(8, 9, 121, 166);
+		frame.getContentPane().add(userAnswerPanel); 
+
 		// Init default value
 
 		GenerateCalculation();

@@ -27,12 +27,5 @@ public class NumberGenerator {
         if (result == userAnswer) return true;
         else return false;
     }
-    public String DisplayResult(boolean result){
-        String ResultToDisplay;
 
-        if (result == false) ResultToDisplay = "Incorrect";
-        else ResultToDisplay = "Correct!";
-
-        return ResultToDisplay;
-    }
 }
