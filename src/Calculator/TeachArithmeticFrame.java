@@ -2,21 +2,29 @@ package Calculator;
 
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import java.awt.GridBagLayout;
-import javax.swing.JLabel;
-import java.awt.GridBagConstraints;
-import javax.swing.JTextField;
-import javax.swing.JButton;
+import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.util.Scanner;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.ScrollPane;
 
 
 public class TeachArithmeticFrame {
 
-	private JFrame frame;
-	private JTextField userAnswerField;
+	JFrame frame;
+	JTextField userAnswerField;
+	JLabel questionDisplayLabel;
+	JButton checkUserInputBtn;
+	NumberGenerator generator;
+	JButton nextQuestionBtn;
+	JLabel invalidValueLabel;
+	JButton resetInputButton;
+	JLabel equalLabel;
+	JLabel userCheckLabel;
 
 	/**
 	 * Launch the application.
@@ -32,31 +40,6 @@ public class TeachArithmeticFrame {
 				}
 			}
 		});
-		NumberGenerator generateNumber = new NumberGenerator();
-		int number1, number2;
-		number1 = generateNumber.GenerateRandomNumber();
-		number2 = generateNumber.GenerateRandomNumber();
-		System.out.println("Two random number are: "+ number1 + " and " + number2);
-
-		String stringToDisplay;
-		ConvertNumberToDisplay convertNumber = new ConvertNumberToDisplay();
-		stringToDisplay = convertNumber.ConvertFromNumberToString(number1,number2);
-		System.out.println("The String is: "+ stringToDisplay);
-
-		int finalResult;
-		CalculateResult calculateResult = new CalculateResult();
-		finalResult = calculateResult.CalculateFinalResult(number1,number2);
-		System.out.println("The result is: " + finalResult);
-
-		int userAnswer;
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter the result: ");
-		userAnswer = scanner.nextInt();
-
-		boolean isUserCorrect;
-		VerifyTheResult verifyresult = new VerifyTheResult();
-		isUserCorrect = verifyresult.VerifyTheResult(finalResult,userAnswer);
-		System.out.print("Is user correct? " + isUserCorrect);
 	}
 
 	/**
@@ -70,46 +53,93 @@ public class TeachArithmeticFrame {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel questionDisplayLabel = new JLabel();
-		questionDisplayLabel.setBounds(93, 61, 56, 16);
+		questionDisplayLabel = new JLabel();
+		questionDisplayLabel.setHorizontalAlignment(JLabel.RIGHT);
+		questionDisplayLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		questionDisplayLabel.setBounds(137, 61, 56, 16);
 		frame.getContentPane().add(questionDisplayLabel);
-		
+
 		userAnswerField = new JTextField();
-		userAnswerField.setBounds(201, 58, 116, 22);
+		userAnswerField.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		userAnswerField.setHorizontalAlignment(SwingConstants.LEFT);
+		userAnswerField.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent arg0) {
+					invalidValueLabel.setText("");
+			}
+		});
+		userAnswerField.setBounds(240, 58, 116, 22);
 		frame.getContentPane().add(userAnswerField);
 		userAnswerField.setColumns(10);
-		
-		JLabel userCheckLabel = new JLabel("New label");
-		userCheckLabel.setBounds(167, 119, 56, 16);
+
+		userCheckLabel = new JLabel("");
+		userCheckLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		userCheckLabel.setBounds(244, 130, 56, 16);
 		frame.getContentPane().add(userCheckLabel);
+
 		
-		JButton checkUserInputBtn = new JButton("OK");
-		checkUserInputBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		checkUserInputBtn = new JButton("OK");
+		checkUserInputBtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				try {
+					int i = Integer.parseInt(userAnswerField.getText());
+					invalidValueLabel.setText("");
+					boolean result = generator.VerifyTheResult(Integer.parseInt(userAnswerField.getText()));
+					if (result == true){
+						userCheckLabel.setText("Correct!");
+					}
+					else {userCheckLabel.setText("Incorrect");}
+				}
+				catch (NumberFormatException e1)
+				{
+					invalidValueLabel.setText("Invalid Number");
+				};
 			}
 		});
-		checkUserInputBtn.setBounds(52, 190, 97, 25);
+		checkUserInputBtn.setBounds(169, 190, 97, 25);
 		frame.getContentPane().add(checkUserInputBtn);
-		
-		JButton nextQuestionBtn = new JButton("Next");
+
+		nextQuestionBtn = new JButton("Next");
 		nextQuestionBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				GenerateCalculation();
 			}
 		});
-		nextQuestionBtn.setBounds(162, 190, 97, 25);
+		nextQuestionBtn.setBounds(278, 190, 97, 25);
 		frame.getContentPane().add(nextQuestionBtn);
 		
-		JButton resetInputButton = new JButton("Reset");
-		resetInputButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		resetInputButton.setBounds(271, 190, 97, 25);
+		resetInputButton = new JButton("Reset");
+		resetInputButton.setBounds(15, 190, 97, 25);
 		frame.getContentPane().add(resetInputButton);
+
+		invalidValueLabel = new JLabel("");
+		invalidValueLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		invalidValueLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		invalidValueLabel.setBounds(147, 90, 206, 16);
+		frame.getContentPane().add(invalidValueLabel);
+		
+		equalLabel = new JLabel("=");
+		equalLabel.setBounds(205, 62, 23, 16);
+		frame.getContentPane().add(equalLabel);
+		
+		ScrollPane scrollPane = new ScrollPane();
+		scrollPane.setBounds(5, 9, 116, 175);
+		frame.getContentPane().add(scrollPane);
+		// Init default value
+
+		GenerateCalculation();
+
+	}
+
+	private void GenerateCalculation() {
+		generator = new NumberGenerator();
+		questionDisplayLabel.setText(generator.GetDisplayText());
 	}
 }
