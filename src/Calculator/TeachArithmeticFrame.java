@@ -20,7 +20,7 @@ public class TeachArithmeticFrame {
 	JTextField userAnswerField;
 	JLabel questionDisplayLabel;
 	JButton checkUserInputBtn;
-	NumberGenerator generator;
+	NumberGenerator generator = new NumberGenerator();
 	JButton nextQuestionBtn;
 	JLabel invalidValueLabel;
 	JButton resetInputButton;
@@ -176,7 +176,7 @@ public class TeachArithmeticFrame {
 			} else {
 				userCheckLabel.setText("Incorrect");
 				userTries++;
-				answerHolder.add(userTries + ": " + generator.questionToDisplay + " = " + userAnswerField.getText());
+				answerHolder.add(userTries + ": " + generator.GetDisplayText() + " = " + userAnswerField.getText());
 				String value ="";
 				for (int j=0;j<answerHolder.size();j++){
 					value +=  (String) answerHolder.toArray()[j] + "\n";
@@ -189,7 +189,8 @@ public class TeachArithmeticFrame {
 	}
 
 	private void GenerateCalculation() {
-		generator = NumberGenerator.GenerateQuestion();
+
+		generator.GenerateQuestion();
 		questionDisplayLabel.setText(generator.GetDisplayText());
 	}
 

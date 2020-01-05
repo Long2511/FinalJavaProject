@@ -2,21 +2,14 @@ package Calculator;
 
 import java.util.Random;
 
-public abstract class NumberGenerator {
+public class NumberGenerator {
     public int firstNumber;
     public int secondNumber;
+    public Calculation operation;
     public String questionToDisplay;
 
-    public NumberGenerator(int num1, int num2) {
-        firstNumber = num1;
-        secondNumber = num2;
-    }
-
     public NumberGenerator() {
-
-        firstNumber = GenerateRandomNumber();
-        secondNumber = GenerateRandomNumber();
-
+        GenerateQuestion();
     }
 
 
@@ -29,34 +22,38 @@ public abstract class NumberGenerator {
         return randomGeneratedNumber;
     }
 
-    public abstract String GetDisplayText();
+    public String GetDisplayText(){
+        return operation.GetDisplayText();
+    };
 
     public boolean VerifyTheResult(int userAnswer) {
-        if (Calculation() == userAnswer) return true;
+        if (operation.Calculation() == userAnswer) return true;
         else return false;
     }
 
-    public static NumberGenerator GenerateQuestion() {
+    public  void GenerateQuestion() {
         Random questionID = new Random();
         int type = 0;
         while (type == 0) {
             type = questionID.nextInt(4);
         }
+        firstNumber = GenerateRandomNumber();
+        secondNumber = GenerateRandomNumber();
+        while (type == 3 && secondNumber == 0 ){
+            firstNumber = GenerateRandomNumber();
+            secondNumber = GenerateRandomNumber();
+        }
         switch (type){
             case 0:
-                return new AddOperation();
+                operation = new AddOperation(firstNumber,secondNumber);
             case 1:
-                return new SubtractOperation();
+                operation = new SubtractOperation(firstNumber,secondNumber);
             case 2:
-                return new MultipleOperation();
+                operation = new MultipleOperation(firstNumber,secondNumber);
             case 3:
-                return new DivideOperation();
-            default:
-                return null;
+                operation = new DivideOperation(firstNumber,secondNumber);
         }
     }
-
-    public abstract int Calculation();
 }
 
 

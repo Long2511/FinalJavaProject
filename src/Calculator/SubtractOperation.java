@@ -1,14 +1,11 @@
 package Calculator;
 
-public class SubtractOperation extends NumberGenerator {
+public class SubtractOperation extends Calculation {
 
     public SubtractOperation(int num1, int num2){
         super(num1,num2);
     }
 
-    public SubtractOperation(){
-        super();
-    }
 
     @Override
     public int Calculation() {
@@ -17,7 +14,6 @@ public class SubtractOperation extends NumberGenerator {
 
     @Override
     public String GetDisplayText() {
-        questionToDisplay = firstNumber + " - " + secondNumber;
-        return questionToDisplay;
+        return firstNumber + " - " + secondNumber;
     }
 }

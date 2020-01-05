@@ -1,18 +1,9 @@
 package Calculator;
 
-public class DivideOperation extends NumberGenerator {
+public class DivideOperation extends Calculation {
 
     public DivideOperation(int num1, int num2){
         super(num1,num2);
-    }
-
-    public DivideOperation(){
-        super();
-        while (secondNumber == 0 || firstNumber < secondNumber) {
-            //reset everything
-            firstNumber = GenerateRandomNumber();
-            secondNumber = GenerateRandomNumber();
-        }
     }
 
     @Override
@@ -22,7 +13,6 @@ public class DivideOperation extends NumberGenerator {
 
     @Override
     public String GetDisplayText() {
-        questionToDisplay = firstNumber + " / " + secondNumber;
-        return questionToDisplay;
+        return firstNumber + " / " + secondNumber;
     }
 }
