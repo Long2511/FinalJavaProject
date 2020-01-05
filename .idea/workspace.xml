@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e1e844e-6263-4081-9e3f-6493a61b13b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Calculator/AddOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Calculator/DivideOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Calculator/MultipleOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Calculator/SubtractOperation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculator.uml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculator/NumberGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator/NumberGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculator/TeachArithmeticFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator/TeachArithmeticFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Test/NumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/NumberGeneratorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +63,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TeachArithmeticFrame">
+  <component name="RunManager" selected="JUnit.NumberGeneratorTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Calculator.Main" />
       <module name="FinalJavaProject" />
@@ -130,9 +123,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.NumberGeneratorTest" />
         <item itemvalue="Application.TeachArithmeticFrame" />
         <item itemvalue="JUnit.NumberGeneratorTest.verifyTheResult" />
-        <item itemvalue="JUnit.NumberGeneratorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -167,7 +160,7 @@
       <workItem from="1577949527798" duration="22000" />
       <workItem from="1578121241084" duration="3668000" />
       <workItem from="1578130515274" duration="38053000" />
-      <workItem from="1578230101880" duration="2441000" />
+      <workItem from="1578230101880" duration="3264000" />
     </task>
     <servers />
   </component>
@@ -235,26 +228,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="139" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1578214376241" />
-    <state width="724" height="246" key="GridCell.Tab.0.bottom" timestamp="1578232059221">
+    <state width="1493" height="242" key="GridCell.Tab.0.bottom" timestamp="1578233031646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@-1920.-122.1920.1160" timestamp="1577933530701" />
-    <state width="724" height="246" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578232059221" />
-    <state width="724" height="246" key="GridCell.Tab.0.center" timestamp="1578232059220">
+    <state width="1493" height="242" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578233031646" />
+    <state width="1493" height="242" key="GridCell.Tab.0.center" timestamp="1578233031646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@-1920.-122.1920.1160" timestamp="1577933530701" />
-    <state width="724" height="246" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578232059220" />
-    <state width="724" height="246" key="GridCell.Tab.0.left" timestamp="1578232059220">
+    <state width="1493" height="242" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578233031646" />
+    <state width="1493" height="242" key="GridCell.Tab.0.left" timestamp="1578233031646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@-1920.-122.1920.1160" timestamp="1577933530701" />
-    <state width="724" height="246" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578232059220" />
-    <state width="724" height="246" key="GridCell.Tab.0.right" timestamp="1578232059221">
+    <state width="1493" height="242" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578233031646" />
+    <state width="1493" height="242" key="GridCell.Tab.0.right" timestamp="1578233031646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@-1920.-122.1920.1160" timestamp="1577933530701" />
-    <state width="724" height="246" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578232059221" />
+    <state width="1493" height="242" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578233031646" />
     <state width="712" height="260" key="GridCell.Tab.1.bottom" timestamp="1578230043415">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
