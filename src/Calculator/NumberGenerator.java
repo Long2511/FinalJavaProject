@@ -58,8 +58,6 @@ public class NumberGenerator {
             case 4:
                 questionToDisplay = firstNumber + " / " + secondNumber;
                 break;
-            default:
-                questionToDisplay = firstNumber + " x " + secondNumber;
     }
         return questionToDisplay;
     }
