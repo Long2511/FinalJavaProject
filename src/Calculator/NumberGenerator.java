@@ -15,22 +15,22 @@ public class NumberGenerator {
         firstNumber = GenerateRandomNumber();
         secondNumber = GenerateRandomNumber();
 
-        while (questionType == 4 && (secondNumber == 0 || firstNumber < secondNumber)){
+        while (questionType == 3 && (secondNumber == 0 || firstNumber < secondNumber)){
             //reset everything
             firstNumber = GenerateRandomNumber();
             secondNumber = GenerateRandomNumber();
         }
         switch (questionType){
-            case 1:
+            case 0:
                 result = firstNumber + secondNumber;
                 break;
-            case 2:
+            case 1:
                 result = firstNumber - secondNumber;
                 break;
-            case 3:
+            case 2:
                 result = firstNumber * secondNumber;
                 break;
-            case 4:
+            case 3:
                 result = firstNumber / secondNumber;
                 break;
         }
@@ -46,16 +46,16 @@ public class NumberGenerator {
     }
     public String GetDisplayText(){
         switch (questionType){
-            case 1:
+            case 0:
                 questionToDisplay =  firstNumber + " + " + secondNumber;
                 break;
-            case 2:
+            case 1:
                 questionToDisplay = firstNumber + " - " + secondNumber;
                 break;
-            case 3:
+            case 2:
                 questionToDisplay = firstNumber + " x " + secondNumber;
                 break;
-            case 4:
+            case 3:
                 questionToDisplay = firstNumber + " / " + secondNumber;
                 break;
     }
@@ -71,7 +71,7 @@ public class NumberGenerator {
         //move all logic to parent since it is only used once
         Random questionID = new Random();
         while (questionType==0) {
-            questionType = questionID.nextInt(4) + 1;
+            questionType = questionID.nextInt(4);
         }
         return questionType;
     }

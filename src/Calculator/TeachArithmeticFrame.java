@@ -113,6 +113,7 @@ public class TeachArithmeticFrame {
 				userCheckLabel.setText("");
 				ResetUserinput();
 				userAnswerField.setText("");
+				invalidValueLabel.setText("");
 			}
 		});
 		nextQuestionBtn.setBounds(278, 190, 97, 25);
