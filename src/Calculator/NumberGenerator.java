@@ -2,23 +2,21 @@ package Calculator;
 
 import java.util.Random;
 
-public class NumberGenerator {
+public abstract class NumberGenerator {
     public int firstNumber;
     public int secondNumber;
-    public int questionType = 0;
     public String questionToDisplay;
 
+    public NumberGenerator(int num1, int num2) {
+        firstNumber = num1;
+        secondNumber = num2;
+    }
+
     public NumberGenerator() {
-        QuestionType();
 
         firstNumber = GenerateRandomNumber();
         secondNumber = GenerateRandomNumber();
 
-        while (questionType == 3 && (secondNumber == 0 || firstNumber < secondNumber)) {
-            //reset everything
-            firstNumber = GenerateRandomNumber();
-            secondNumber = GenerateRandomNumber();
-        }
     }
 
 
@@ -31,51 +29,34 @@ public class NumberGenerator {
         return randomGeneratedNumber;
     }
 
-    public String GetDisplayText() {
-        switch (questionType) {
-            case 0:
-                questionToDisplay = firstNumber + " + " + secondNumber;
-                break;
-            case 1:
-                questionToDisplay = firstNumber + " - " + secondNumber;
-                break;
-            case 2:
-                questionToDisplay = firstNumber + " x " + secondNumber;
-                break;
-            case 3:
-                questionToDisplay = firstNumber + " / " + secondNumber;
-                break;
-        }
-        return questionToDisplay;
-    }
+    public abstract String GetDisplayText();
 
     public boolean VerifyTheResult(int userAnswer) {
         if (Calculation() == userAnswer) return true;
         else return false;
     }
 
-    public int QuestionType() {
+    public static NumberGenerator GenerateQuestion() {
         Random questionID = new Random();
-        while (questionType == 0) {
-            questionType = questionID.nextInt(4);
+        int type = 0;
+        while (type == 0) {
+            type = questionID.nextInt(4);
         }
-        return questionType;
+        switch (type){
+            case 0:
+                return new AddOperation();
+            case 1:
+                return new SubtractOperation();
+            case 2:
+                return new MultipleOperation();
+            case 3:
+                return new DivideOperation();
+            default:
+                return null;
+        }
     }
 
-    public int Calculation() {
-        switch (questionType) {
-            case 0:
-                return firstNumber + secondNumber;
-            case 1:
-                return firstNumber - secondNumber;
-            case 2:
-                return firstNumber * secondNumber;
-            case 3:
-                return firstNumber / secondNumber;
-            default:
-                return 0;
-        }
-    }
+    public abstract int Calculation();
 }
 
 
