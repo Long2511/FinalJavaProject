@@ -20,9 +20,6 @@ public class NumberGenerator {
             firstNumber = GenerateRandomNumber();
             secondNumber = GenerateRandomNumber();
         }
-        //??? 
-        System.out.println(questionType);
-        //Maybe create an enum for arimethic operation for easier reading? Like:  case Operation.ADD:
         switch (questionType){
             case 1:
                 result = firstNumber + secondNumber;
@@ -48,7 +45,6 @@ public class NumberGenerator {
         return randomGeneratedNumber;
     }
     public String GetDisplayText(){
-        //Maybe create an enum to shorten this part to questionToDisplay =  firstNumber + questionTypeEnum.Value + secondNumber;
         switch (questionType){
             case 1:
                 questionToDisplay =  firstNumber + " + " + secondNumber;
