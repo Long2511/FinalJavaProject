@@ -15,7 +15,7 @@ public class NumberGenerator {
         firstNumber = GenerateRandomNumber();
         secondNumber = GenerateRandomNumber();
 
-        while (questionType == 4 && (secondNumber == 0 || firstNumber < secondNumber){
+        while (questionType == 4 && (secondNumber == 0 || firstNumber < secondNumber)){
             //reset everything
             firstNumber = GenerateRandomNumber();
             secondNumber = GenerateRandomNumber();
