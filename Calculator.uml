@@ -7,24 +7,17 @@
     <node x="4.5" y="341.0">Calculator.TeachArithmeticFrame</node>
   </nodes>
   <notes />
-  <edges>
-    <edge source="Calculator.TeachArithmeticFrame" target="Calculator.NumberGenerator">
-      <point x="50.0" y="-233.5" />
-      <point x="154.5" y="316.0" />
-      <point x="156.75" y="316.0" />
-      <point x="52.25" y="145.5" />
-    </edge>
-  </edges>
-  <settings layout="Hierarchic Group" zoom="0.8" x="486.0" y="409.75" />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.8067632850241546" x="104.5" y="404.0" />
   <SelectedNodes>
     <node>Calculator.TeachArithmeticFrame</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>
-    <Category>Inner Classes</Category>
     <Category>Methods</Category>
     <Category>Properties</Category>
+    <Category>Inner Classes</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>

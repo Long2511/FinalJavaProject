@@ -62,11 +62,11 @@ public class TeachArithmeticFrame {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		questionDisplayLabel = new JLabel();
 		questionDisplayLabel.setHorizontalAlignment(JLabel.RIGHT);
 		questionDisplayLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		questionDisplayLabel.setBounds(137, 61, 56, 16);
+		questionDisplayLabel.setBounds(169, 61, 56, 16);
 		frame.getContentPane().add(questionDisplayLabel);
 
 		userAnswerField = new JTextField();
@@ -86,7 +86,7 @@ public class TeachArithmeticFrame {
 		});
 
 
-		userAnswerField.setBounds(240, 58, 116, 22);
+		userAnswerField.setBounds(259, 58, 116, 22);
 		frame.getContentPane().add(userAnswerField);
 		userAnswerField.setColumns(10);
 
@@ -145,6 +145,12 @@ public class TeachArithmeticFrame {
 		scrollPane.setBounds(5, 16, 121, 150);
 		scrollPane.setViewportView(userAnswer);
 		frame.getContentPane().add(scrollPane);
+		
+		JLabel equalLabel = new JLabel("=");
+		equalLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		equalLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		equalLabel.setBounds(226, 61, 21, 16);
+		frame.getContentPane().add(equalLabel);
 
 
 		// Init default value
@@ -188,4 +194,7 @@ public class TeachArithmeticFrame {
 		generator.QuestionType();
 		questionDisplayLabel.setText(generator.GetDisplayText());
 	}
+
+	NumberGenerator test = new NumberGenerator();
+
 }
