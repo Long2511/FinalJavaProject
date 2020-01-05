@@ -14,7 +14,9 @@ import java.util.Vector;
 
 
 public class TeachArithmeticFrame {
-
+	/**
+	 * this will init the nessesary component of the window
+	 */
 	JFrame frame;
 	JTextField userAnswerField;
 	JLabel questionDisplayLabel;
@@ -109,9 +111,7 @@ public class TeachArithmeticFrame {
 			public void actionPerformed(ActionEvent e) {
 				GenerateCalculation();
 				userCheckLabel.setText("");
-				answerHolder.clear();
-				userAnswer.setText("");
-				userTries = 0;
+				ResetUserinput();
 				userAnswerField.setText("");
 			}
 		});
@@ -122,9 +122,7 @@ public class TeachArithmeticFrame {
 		resetInputButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent arg0) {
-				userAnswer.setText("");
-				userTries = 0;
-				answerHolder.clear();
+				ResetUserinput();
 			}
 		});
 		resetInputButton.setBounds(15, 190, 97, 25);
@@ -154,6 +152,12 @@ public class TeachArithmeticFrame {
 
 	}
 
+	private void ResetUserinput(){
+		userAnswer.setText("");
+		userTries = 0;
+		answerHolder.clear();
+	}
+
 	private void CheckUserInput(){
 		try {
 			int i = Integer.parseInt(userAnswerField.getText());
@@ -166,7 +170,7 @@ public class TeachArithmeticFrame {
 			} else {
 				userCheckLabel.setText("Incorrect");
 				userTries++;
-				answerHolder.add(userTries + " : " + userAnswerField.getText());
+				answerHolder.add(userTries + ": " + generator.questionToDisplay + " = " + userAnswerField.getText());
 				String value ="";
 				for (int j=0;j<answerHolder.size();j++){
 					value +=  (String) answerHolder.toArray()[j] + "\n";
@@ -180,6 +184,7 @@ public class TeachArithmeticFrame {
 
 	private void GenerateCalculation() {
 		generator = new NumberGenerator();
+		generator.QuestionType();
 		questionDisplayLabel.setText(generator.GetDisplayText());
 	}
 }
