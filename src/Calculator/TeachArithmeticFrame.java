@@ -3,6 +3,7 @@ package Calculator;
 import java.awt.*;
 
 import javax.swing.*;
+import javax.swing.plaf.multi.MultiLabelUI;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
@@ -22,11 +23,10 @@ public class TeachArithmeticFrame {
 	JButton nextQuestionBtn;
 	JLabel invalidValueLabel;
 	JButton resetInputButton;
-	JLabel equalLabel;
 	JLabel userCheckLabel;
-	JPanel userAnswerDisplay;
 	Vector answerHolder = new Vector();
 	int userTries;
+	private JTextArea userAnswer;
 
 	/**
 	 * Launch the application.
@@ -75,7 +75,14 @@ public class TeachArithmeticFrame {
 			public void keyTyped(KeyEvent arg0) {
 					invalidValueLabel.setText("");
 			}
+			@Override
+			public void keyPressed(KeyEvent arg0) {
+				if(arg0.getKeyCode()==KeyEvent.VK_ENTER){
+					CheckUserInput();
+				}
+			}
 		});
+
 
 		userAnswerField.setBounds(240, 58, 116, 22);
 		frame.getContentPane().add(userAnswerField);
@@ -91,26 +98,7 @@ public class TeachArithmeticFrame {
 		checkUserInputBtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent arg0) {
-					try {
-						int i = Integer.parseInt(userAnswerField.getText());
-						invalidValueLabel.setText("");
-						boolean result = generator.VerifyTheResult(Integer.parseInt(userAnswerField.getText()));
-						if (result == true) {
-							userCheckLabel.setText("Correct!");
-							userTries = 0;
-							answerHolder.clear();
-						} else {
-							userCheckLabel.setText("Incorrect");
-							userTries++;
-							answerHolder.add(userTries + ":" + userAnswerField.getText());
-						}
-
-						System.out.println(answerHolder);
-
-					} catch (NumberFormatException e1) {
-						invalidValueLabel.setText("Invalid Number");
-					}
-					;
+				CheckUserInput();
 			}
 		});
 		checkUserInputBtn.setBounds(169, 190, 97, 25);
@@ -122,12 +110,23 @@ public class TeachArithmeticFrame {
 				GenerateCalculation();
 				userCheckLabel.setText("");
 				answerHolder.clear();
+				userAnswer.setText("");
+				userTries = 0;
+				userAnswerField.setText("");
 			}
 		});
 		nextQuestionBtn.setBounds(278, 190, 97, 25);
 		frame.getContentPane().add(nextQuestionBtn);
 		
 		resetInputButton = new JButton("Reset");
+		resetInputButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				userAnswer.setText("");
+				userTries = 0;
+				answerHolder.clear();
+			}
+		});
 		resetInputButton.setBounds(15, 190, 97, 25);
 		frame.getContentPane().add(resetInputButton);
 
@@ -138,19 +137,45 @@ public class TeachArithmeticFrame {
 		invalidValueLabel.setForeground(Color.RED);
 		frame.getContentPane().add(invalidValueLabel);
 		
-		equalLabel = new JLabel("=");
-		equalLabel.setBounds(205, 62, 23, 16);
-		frame.getContentPane().add(equalLabel);
+		userAnswer = new JTextArea(100,1);
+		userAnswer.setPreferredSize(new Dimension(100,150));
+		userAnswer.setEditable(false);
 
-		JScrollPane userAnswerPanel = new JScrollPane();
-		userAnswerPanel.setViewportBorder(null);
-		userAnswerPanel.setBounds(8, 9, 121, 166);
-		frame.getContentPane().add(userAnswerPanel); 
+
+		JScrollPane scrollPane = new JScrollPane(userAnswer);
+		scrollPane.setBounds(5, 16, 121, 150);
+		scrollPane.setViewportView(userAnswer);
+		frame.getContentPane().add(scrollPane);
+
 
 		// Init default value
 
 		GenerateCalculation();
 
+	}
+
+	private void CheckUserInput(){
+		try {
+			int i = Integer.parseInt(userAnswerField.getText());
+			invalidValueLabel.setText("");
+			boolean result = generator.VerifyTheResult(Integer.parseInt(userAnswerField.getText()));
+			if (result == true) {
+				userCheckLabel.setText("Correct!");
+				userTries = 0;
+				answerHolder.clear();
+			} else {
+				userCheckLabel.setText("Incorrect");
+				userTries++;
+				answerHolder.add(userTries + " : " + userAnswerField.getText());
+				String value ="";
+				for (int j=0;j<answerHolder.size();j++){
+					value +=  (String) answerHolder.toArray()[j] + "\n";
+					userAnswer.setText(value);
+				}
+			}
+		} catch (NumberFormatException e1) {
+			invalidValueLabel.setText("Invalid Number");
+		}
 	}
 
 	private void GenerateCalculation() {
