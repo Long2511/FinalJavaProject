@@ -1,7 +1,6 @@
 package Calculator;
 
 public class AddOperation extends NumberGenerator {
-    public int questionType = 0;
 
     public AddOperation(){
         super();
