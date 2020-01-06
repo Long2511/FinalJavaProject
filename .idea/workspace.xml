@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3e1e844e-6263-4081-9e3f-6493a61b13b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/NumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/NumberGeneratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Calculator/AddOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator/AddOperation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NumberGeneratorTest">
+  <component name="RunManager" selected="Application.TeachArithmeticFrame">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Calculator.Main" />
       <module name="FinalJavaProject" />
@@ -110,6 +110,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NumberGeneratorTest.calculationAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinalJavaProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.NumberGeneratorTest" />
+      <option name="METHOD_NAME" value="calculationAdd" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NumberGeneratorTest.verifyTheResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinalJavaProject" />
       <extension name="coverage">
@@ -128,8 +144,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.NumberGeneratorTest" />
         <item itemvalue="Application.TeachArithmeticFrame" />
+        <item itemvalue="JUnit.NumberGeneratorTest" />
+        <item itemvalue="JUnit.NumberGeneratorTest.calculationAdd" />
         <item itemvalue="JUnit.NumberGeneratorTest.verifyTheResult" />
       </list>
     </recent_temporary>
@@ -233,29 +250,29 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="139" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1578214376241" />
-    <state width="1877" height="242" key="GridCell.Tab.0.bottom" timestamp="1578278696102">
+    <state width="1877" height="242" key="GridCell.Tab.0.bottom" timestamp="1578284943980">
       <screen x="1920" y="-122" width="1920" height="1160" />
     </state>
     <state width="1877" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@-1920.-122.1920.1160" timestamp="1577933530701" />
-    <state width="1877" height="242" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@1920.-122.1920.1160" timestamp="1578278696102" />
+    <state width="1877" height="242" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@1920.-122.1920.1160" timestamp="1578284943980" />
     <state width="1493" height="242" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578233031646" />
-    <state width="1877" height="242" key="GridCell.Tab.0.center" timestamp="1578278696102">
+    <state width="1877" height="242" key="GridCell.Tab.0.center" timestamp="1578284943980">
       <screen x="1920" y="-122" width="1920" height="1160" />
     </state>
     <state width="1877" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@-1920.-122.1920.1160" timestamp="1577933530701" />
-    <state width="1877" height="242" key="GridCell.Tab.0.center/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@1920.-122.1920.1160" timestamp="1578278696102" />
+    <state width="1877" height="242" key="GridCell.Tab.0.center/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@1920.-122.1920.1160" timestamp="1578284943980" />
     <state width="1493" height="242" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578233031646" />
-    <state width="1877" height="242" key="GridCell.Tab.0.left" timestamp="1578278696102">
+    <state width="1877" height="242" key="GridCell.Tab.0.left" timestamp="1578284943980">
       <screen x="1920" y="-122" width="1920" height="1160" />
     </state>
     <state width="1877" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@-1920.-122.1920.1160" timestamp="1577933530701" />
-    <state width="1877" height="242" key="GridCell.Tab.0.left/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@1920.-122.1920.1160" timestamp="1578278696102" />
+    <state width="1877" height="242" key="GridCell.Tab.0.left/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@1920.-122.1920.1160" timestamp="1578284943980" />
     <state width="1493" height="242" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578233031646" />
-    <state width="1877" height="242" key="GridCell.Tab.0.right" timestamp="1578278696102">
+    <state width="1877" height="242" key="GridCell.Tab.0.right" timestamp="1578284943980">
       <screen x="1920" y="-122" width="1920" height="1160" />
     </state>
     <state width="1877" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@-1920.-122.1920.1160" timestamp="1577933530701" />
-    <state width="1877" height="242" key="GridCell.Tab.0.right/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@1920.-122.1920.1160" timestamp="1578278696102" />
+    <state width="1877" height="242" key="GridCell.Tab.0.right/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@1920.-122.1920.1160" timestamp="1578284943980" />
     <state width="1493" height="242" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578233031646" />
     <state width="1877" height="394" key="GridCell.Tab.1.bottom" timestamp="1578278692640">
       <screen x="1920" y="-122" width="1920" height="1160" />
@@ -299,6 +316,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="924" y="119" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1578227711928" />
+    <state x="2576" y="190" width="607" height="536" key="find.popup" timestamp="1578282989109">
+      <screen x="1920" y="-122" width="1920" height="1160" />
+    </state>
+    <state x="2576" y="190" width="607" height="536" key="find.popup/0.0.1536.824/1920.-122.1920.1160/-1920.-122.1920.1160@1920.-122.1920.1160" timestamp="1578282989109" />
     <state x="809" y="190" key="run.anything.popup" timestamp="1578227618592">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
