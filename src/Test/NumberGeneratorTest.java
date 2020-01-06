@@ -34,4 +34,19 @@ class NumberGeneratorTest {
         generator = new AddOperation(2,3);
         assertEquals(5, generator.Calculation());
     }
+    @org.junit.jupiter.api.Test
+    void calculationSubtract() {
+        generator = new SubtractOperation(2,3);
+        assertEquals(-1, generator.Calculation());
+    }
+    @org.junit.jupiter.api.Test
+    void calculationDivide() {
+        generator = new DivideOperation(9,3);
+        assertEquals(3, generator.Calculation());
+    }
+    @org.junit.jupiter.api.Test
+    void calculationMultiple() {
+        generator = new MultipleOperation(2,3);
+        assertEquals(6, generator.Calculation());
+    }
 }
