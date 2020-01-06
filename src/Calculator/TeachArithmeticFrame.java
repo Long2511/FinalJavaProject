@@ -3,7 +3,6 @@ package Calculator;
 import java.awt.*;
 
 import javax.swing.*;
-import javax.swing.plaf.multi.MultiLabelUI;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
@@ -170,7 +169,7 @@ public class TeachArithmeticFrame {
 			int i = Integer.parseInt(userAnswerField.getText());
 			invalidValueLabel.setText("");
 			boolean result = generator.VerifyTheResult(Integer.parseInt(userAnswerField.getText()));
-			if (result == true) {
+			if (result) {
 				userCheckLabel.setText("Correct!");
 				userTries = 0;
 				answerHolder.clear();
@@ -190,11 +189,8 @@ public class TeachArithmeticFrame {
 	}
 
 	private void GenerateCalculation() {
-		generator = new NumberGenerator();
-		generator.QuestionType();
+		generator = NumberGenerator.GenerateQuestion();
 		questionDisplayLabel.setText(generator.GetDisplayText());
 	}
-
-	NumberGenerator test = new NumberGenerator();
 
 }
