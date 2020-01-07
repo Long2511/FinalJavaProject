@@ -26,7 +26,7 @@ public class TeachArithmeticFrame {
 	JButton resetInputButton;
 	JLabel userCheckLabel;
 	Vector answerHolder = new Vector();
-	int userTries;
+	private int userTries;
 	private JTextArea userAnswer;
 
 	/**
