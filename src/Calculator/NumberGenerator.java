@@ -39,9 +39,9 @@ public abstract class NumberGenerator {
     public static NumberGenerator GenerateQuestion() {
         Random questionID = new Random();
         int type = 0;
-        while (type == 0) {
-            type = questionID.nextInt(4);
-        }
+
+           type = questionID.nextInt(4);
+
         switch (type){
             case 0:
                 return new AddOperation();
